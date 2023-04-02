@@ -1,0 +1,26 @@
+# Image conversion project coloured image to grayscale
+import cv2
+
+from google.colab.patches import cv2_imshow
+
+
+path= input("Enter the path and name of the image===")
+print("You entered this===",path)
+
+
+
+
+
+
+#Now read image
+
+img1=cv2.imread(path,0)    #convert image into grayscale using parameter as 0
+#img1= cv2.resize(img1,(560,700))
+cv2_imshow(img1)
+
+k=cv2.waitkey(0)
+
+if k==ord("s"):
+  cv2.imwrite("output.png",img1)
+else:
+  cv2.destroyAllWindows()
